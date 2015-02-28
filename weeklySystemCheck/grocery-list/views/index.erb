@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fatten me up list</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+
+  <body>
+    <h1>Grocery Shopping List</h1>
+
+    <h2>I already have...</h2>
+    <a href="/">New List</a>
+    <a href="/">Delete last addition</a>
+    <br></br>
+      <% items.each do |item| %>
+        <%if avoid.include?item%>
+          <li><%=item%><%="- this is on the avoid list."%></li>
+        <%else%>
+          <li><%=item%></li>
+        <%end%>
+        <%end%>
+
+<br></br>
+    <form action="/create_list" method="post">
+      <label for="make_list">I want to buy:</label>
+      <input type="text" id="listed" name="buy">
+      <input type="submit" value="add">
+
+    </form>
+  </body>
+</html>
