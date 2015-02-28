@@ -1,0 +1,29 @@
+CSS frameworks
+
+  what does from work provide
+    grid system
+    nicer typography
+    a basic color scheme
+    styling on buttons bars and form
+    helper classes for for things like alaigning text
+  What frameworks are there?
+    foundation (preferred)
+    bootstrap
+    pure
+    many others...
+  How to use foundation
+    first DL
+    copy css foundation
+    foundation.min file
+    *foundation docs
+    inspect element tool (right click website and inspect element)
+    foundation grid system(difficult)
+  Classes
+    rows
+    column
+
+  look into ERB layout files
+    sinatra flash
+    and rails flash
+
+  CSS => controls layout.erb(insert css link) +. broadcast to other .erb files

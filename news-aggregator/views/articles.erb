@@ -11,9 +11,11 @@
   <ul><a href="/">Home</a></ul>
   <ul>
   <%slacks.each do |article|%>
-  <ul><h3><%=article[:articles]%></h3></ul>
-    <ul><a href=http://<%=article[:urls]%>><%=article[:urls]%></a></ul>
-    <ul><%=article[:descriptions]%></ul>
+  <ul><h3><%=article["article"]%></h3></ul>
+  <ul><a href=http://<%=article["url"]%>><%=article["url"]%></a></ul>
+  <ul><%=article["description"]%></ul>
+
+    
 
     <%end%>
 </ul>

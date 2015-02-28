@@ -1,0 +1,87 @@
+persisting data
+
+  goals
+    intro to relational db
+    creating db
+
+  authors table         books table
+  first name            title
+  last name             des
+  dob                   id
+  id            <===    authorid(foreign key)
+
+
+
+
+
+
+  ways we can persist data
+    write it down(can't query)
+    save to a txt or csv spreadsheet slow process if working on a large file
+    databases allows us to search and reduec redunancy
+
+  relational db
+    medthod or organization
+              db are made of related tables by (book author or pub etc...)
+              columns of each table define the attributes of a record in the db
+              rows contain the values of a specific record. can be id by primarykey(used to reference a record)
+              records can link to records in other tables via the primary key stored as a foriegn key
+              (using two column for id is for search and sort)
+  RDBMSes  SQL
+    PSQL
+    MySQL
+    Oracle
+    (difference in syntax)
+    etc
+
+  Postgres - is the one we are learning
+    psql server
+      runs in the background(separate from web apps)
+      one db per app typically
+      one server can host multiple dbs
+    post sql client
+      on terminal run psql
+      create a db in two ways
+        1. createdb dropdb(delete)
+        2. in psql create database (db:name) create using sql
+
+      \h (help)
+      \l (list)
+  datatypes
+    ruby lets us define a variable, and store whatever we want. DB are a more particular.
+    We must be explicit with out datatypes
+      boolean - true/false , 1/0
+      integer - whole numbers: 42,999
+      float - real numbers, dollar amounts: 3.4434
+      varchar(n) string(length)
+      date - year/month/day
+      timestamp - year/month/day/hour/min/sec/milsec
+
+      song_db=#create table songs(
+      song-db(# tite carchar(255),
+      song-db(# year integer,
+      song-db(# tite carchar(255),
+      song-db(# );
+
+      alter table (name) add songkey interger PRIMARY KEY not null
+
+  SQL DB language
+
+    CRUD actions
+      insert create new records
+      select * from books;
+      select * books limit 10 offset 0; (shows first 10)
+      select * books limit 10 offset 10; (offset shows next 10)
+      UPDATE books SET title = "" where id = ""
+      DELETE FROM books WHERE id = ""
+    creating tables
+    scoping data (where clause, limit clause)
+    Ordering data (order by clause)
+    future topics
+
+    UNIQUE
+    uniqueness in one column
+    uniqueness constraint within two or more columns
+    in sql
+    create unique index ab_c_null_ind ON my_table (id_a, Id_b where ID_C is NULL;)
+    create unique index song_title_and_artist ON songs (title, artist where ID_C is NULL;)

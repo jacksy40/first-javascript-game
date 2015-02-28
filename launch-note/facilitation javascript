@@ -1,0 +1,64 @@
+what is javascript is and why we use it?
+  examples
+    Websites with javascript
+      facebook
+          -newsfeed
+          -pop ups
+          -client-side validations check fields before submitting
+          (the code are running on the client side versus sending it
+          in the the server to run code)
+          -asychronous updates/saves
+          -auto-fill; auto-search
+          -show/hide part of a page
+          -data visualization
+          -games
+          -test to see how users are using the site by mouse clicks and movements
+    Where does this code run?
+          -infinite scroll => when user scrolls
+          -popups => user loads
+          -code runs when in response to an action
+          (event handlers will trigger the code)
+  jQuery
+    makes writing reused code easier
+      jquery($) alias for jQuery
+      jQuery is a library of codes to do things
+
+      $("ul").append("<li>new</li>")
+
+example
+
+-hide form using javascript
+  css form
+  .form{
+display: none;
+}#will hide the form
+
+-to make it reappare
+create a link and have the link to diasppear
+
+_create a JS directory
+_article.js
+  <html file><script src="article.js"</script>
+
+In CSS
+-event handler
+  $("#show-form").on("click", function(event){
+  event.preventDefault();
+  #e.g. alert("clicked")
+  $("new-article-form").show();
+  $("show-form").hide();
+  });
+  
+  $("#new-article-form").on("submit", function(event){
+  event.preventDefault();
+var title = $("title").val();
+var url = $("url").val();
+if(title.length === 0) {
+$("new-article-form").append("<p class='error'>Title can't be blank.</p>);
+
+if(url.length === 0 || url.indexOf("http")1== 0){
+$("new-article-form").append("<p class='error'>URL has to start with HTTP</p>);
+});
+-debug using console
+
+-

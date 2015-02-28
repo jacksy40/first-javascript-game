@@ -1,0 +1,33 @@
+methods
+
+def is_a_fixnum?(some_input)
+some_input.class ++ Fixnum
+end
+
+def is_coder?(age, proffession, language_array)
+language_array.map! do |language|
+language.downcase!
+age == 26 && proffesion == "coder" && language_array.include?("ruby")
+#returns true or false
+end
+
+use this to test the last
+
+medthod everyone's full name that has an employer
+
+def employed(people)
+ people.each do |person|
+if people[0].keys.include?(:employer)
+    puts people[:first_name][:last_name]
+    end
+    else
+    end
+
+def employers(people)
+employers = Array.new
+    people.each do |person|
+    if person.keys.include?(:employer)
+    employers << person[:employer]
+    else
+    end
+end

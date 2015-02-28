@@ -1,0 +1,40 @@
+Git
+
+useful things about GIT
+  -version control
+  -rollback ( happens all the time when I add code and ends up breaking everything)
+  -commit more often more place in time to go back to the code where it worked
+  -colaboration(open source projects)
+  -segmentation and experimentation branch out from the first feature and branch out to experiement
+  then if want to change by merging the branch
+
+{example of changes-
+  state 1 of
+  math.rb
+  def add(a,b)
+  a+b
+  end
+
+  state 2 of
+  math.rb
+  def add(a,b)
+  a+b
+  end
+  def sub(a,b)
+  a-b
+  end
+}
+how GIT makes a commit
+
+-unstaged changes
+    .rb files => stage(picture open box) use (git add -A)command to add the files to the box
+    stagged files => commit(git commit)(box closes and ready to push to server for backup)
+
+    in the stagged state use
+    git diff --staged
+    check satus (git s)- to see where your files are
+    avoid (reset --hard)
+
+briefly talk about psql
+-make sure we have it for next week
+next week database

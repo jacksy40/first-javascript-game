@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cook Deliciously</title>
+
+  </head>
+
+  <body>
+    <h1>
+      The recipe is <%=recipes[:name]%>
+    </h1>
+    <h2>Ingredients</h2>
+    <% recipes[:ingredients].each do |ingredient|%>
+      <li><%=ingredient%></li>
+    <%end%>
+    <h2>Directions</h2>
+      <%recipes[:directions].each_with_index do |step,index|%>
+        <li><%=index%>.<%=step%></li>
+      <%end%>
+
+
+
+    <a href="/index">All Recipe</a>
+  </body>
+</html>

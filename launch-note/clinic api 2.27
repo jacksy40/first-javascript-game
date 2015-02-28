@@ -1,0 +1,42 @@
+API
+call for someone's website
+find documentation for API
+use require "httparty"
+
+api tools.com and others
+
+httparty.get(URL)
+how to make that a sinatra
+
+def get_joke
+json = HTTParty.get('http://api.icndb.com/jokes/random')
+json["value"]["joke"]
+end
+
+json["value"]["joke"] will return just the value
+
+ajax button
+
+when we do require API key
+
+BREWrY API beer mapping.com
+
+.gitignore
+inside you want to make a .env
+
+.env.example
+  inside we add the key to hide it from people
+
+now go get API key from the website
+copy and paste into the real .env
+
+brewery[api_key]
+
+def brewery(state)
+variable = url + key + "state"
+
+end
+
+brewery[bmp_location].each do |location|
+  location[location].each do |brewery|
+  allbreweries << {name: s[]}

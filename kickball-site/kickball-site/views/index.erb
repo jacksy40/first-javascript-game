@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kickass Kickball</title>
+  </head>
+
+  <body>
+    <h1>
+      The following is a list of all teams and positions.
+    </h1>
+    <h2>
+      Teams:
+    </h2>
+    <% teams.each_key do |team| %>
+    <li>
+      <a href="/<%= team %>"><%= team %></a>
+    </li>
+    <% end %>
+    <h2>
+      Positions:
+    </h2>
+    <% positions.each_key do |position| %>
+    <li>
+      <a href="/place/<%= position %>"><%= position %></a>
+    </li>
+    <% end %>
+  </body>
+</html>

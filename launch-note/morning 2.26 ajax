@@ -1,0 +1,26 @@
+content-type
+json
+scraping site
+nokogiri
+require "net/http"
+
+ajax 
+data is spit out in JSON 
+
+gemfile
+
+bundle will look at gemfile.lockfile
+and install every gem you need to have your local machine run
+
+
+create gemfile
+source is "https//rubygem.org"
+
+gem "sinatra"
+gem "pg"
+
+now when you bundle you will create a gemfile.lockfile
+
+that will allow others who are using you app to down load the file
+
+ajax => tecnique to pull data and turn into json 

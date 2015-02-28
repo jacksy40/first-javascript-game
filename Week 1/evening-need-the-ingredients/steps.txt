@@ -1,0 +1,9 @@
+called up telnet in the command line
+opened a connect to the localhost
+typed in the POST /task HTTP1.1(enter)
+Host: localhost
+Content-Length: n
+variable = chained+each+word
+command and variable is passed into the server.rb
+block of code is runs
+file is opened or appended

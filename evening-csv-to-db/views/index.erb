@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yummy Brussels</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+
+  <body>
+    <h1>Roasted Brussel Sprouts</h1>
+
+    <h2>List of ingredients</h2>
+
+    <br></br>
+      <% ingredients.each do |one| %>
+          <li><%=one["name"]%></li>
+        <%end%>
+
+<br></br>
+    <form action="/create_list" method="post">
+      <label for="make_list">Build a new db for Brussel Sprouts:</label>
+      <input type="text" id="listed" name="ingredient">
+      <input type="submit" value="add">
+
+    </form>
+  </body>
+</html>

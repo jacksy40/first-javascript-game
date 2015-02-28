@@ -1,0 +1,41 @@
+story line
+user story
+	step one pick a story 
+		-index page 
+			view a list or user album
+			*test driven development
+		-make a layout
+			add folder name album
+			habit name it "index"
+
+"sinatra"	
+		
+def read_album_from(csv)
+albums = {}
+csv.foreach(csv, header: true) do |row|
+album.info = row.to_hash
+albums[album_info["name"]] = album_info
+# creating a hash of hash
+end
+
+get "/albums" do
+														
+erb :"/albums/index", locals{albums: albums}
+
+get"/albums/:album_name" do 
+albums = read_albums_from("alums.csv")
+album_info = albums[params[:album_name]]
+erb :"/albums/show", locals:{album_info: album_info} 
+
+".erb"
+
+<%albums.each do |album|%>
+	<li><a href = "/album/"><%=album%>
+	
+	
+"Show"
+
+<%=album_info[:name]%>
+<%=album_info[:name]%>
+<%=album_info[:name]%>
+<%=album_info[:name]%>

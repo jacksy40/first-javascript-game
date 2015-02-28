@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= position %></title>
+  </head>
+
+  <body>
+    <h1>
+      The position is <%= position %>
+    </h1>
+
+    The players are <% positions[position].each do |name| %>
+      <li>
+        <%= name %>
+      </li>
+    <% end %>
+    <a href="/index">Home</a>
+  </body>
+</html>

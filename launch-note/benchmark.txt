@@ -1,0 +1,53 @@
+benchmark 
+
+what's the most efficient way to iterate over a very large string? 
+
+string.scan(/./).each do
+string.split(" ").each do
+string.each.char do 
+
+
+def one(string)
+	string.scan(/./).each do |char|
+	 char
+ end
+end
+
+def two(string)
+	string.split(" ").each do |char|
+	 char
+ end
+end
+
+def three(string)
+	string.each char do |char|
+	 char
+ end
+end
+
+
+starting = Time.now
+10_000.times do 
+one(string)
+end
+ending = Time.now
+
+puts "#{ending - starting}"
+
+starting = Time.now
+10_000.times do 
+one(string)
+end
+ending = Time.now
+
+puts "#{ending - starting}"
+
+starting = Time.now
+10_000.times do 
+one(string)
+end
+ending = Time.now
+
+puts "#{ending - starting}"
+
+

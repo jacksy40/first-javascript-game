@@ -1,0 +1,53 @@
+HTML CSS
+
+  History
+  HTTP is a publish standard agreed upon contract to use this standard
+  to make the web work
+  HTML Hyper text language
+    samantic structure is the hiarchry
+    communicate with human and machine
+    <p> reps a paragrapgh
+    <article> resembles an article(new)
+    <body>
+  W3C academic program who published html 5
+    -browser started making different interpretation of the standard
+      -created a lot of problem with in browsers because developers has
+      different standards
+  Early internet
+    <blink><marquee> removed do to no samantic meaning
+    different tags were added to make html more readable
+  Samantic make up
+    always starts with
+    <!doctype html>
+    <html lang="en">creatin a new html doc in en(english)
+      <head> title, setup meta key words; seo
+      <meta> "veiwport" (accommodates and opens all the way)
+      content="width=device-width, initial-scale=1.0"/>
+      <title>
+      <link>rel="stylesheet" href="/stylesheet/normailize.css"
+      <link> this is where you link css. key is to link normailize.css
+      <body>
+      <=%yield>
+      if you run into layout issues - use web developing tool
+      moving two tags at once cmd [ or ]
+    every browser sets up a page to look different based on default
+    normalize css copy text and put into your app
+    inline style attributes
+    content delievery network (CDN) amazon s3 helps speed up
+    selectors create selector by element name class or id
+      id - one element on id
+    debug css in chrome
+      inspector
+    CSS p .foo{} .p is a nesting. spacing between p and .foo is important(lookup)
+    RGB
+      #RGB 3 digits or #RRGGBB 6 digits
+    hex decimal 0-9 and A-F
+      #boo - #booooo
+    graceful degradation ( )
+    
+
+  Markups
+
+
+
+  how to decorate mark up with CSS

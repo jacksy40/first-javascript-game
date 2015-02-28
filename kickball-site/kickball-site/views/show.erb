@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= team_name %></title>
+  </head>
+
+  <body>
+    <h1>
+      The team is <%= team_name %>
+    </h1>
+
+    The players are <% teams[team_name].each do |player| %>
+      <li>
+        <%= player.join(": ") %>
+      </li>
+    <% end %>
+    <a href="/index">Home</a>
+  </body>
+</html>

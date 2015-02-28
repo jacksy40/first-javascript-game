@@ -1,0 +1,15 @@
+GIT Remote Repo
+
+  Using remote repository to other locations
+
+  My computer  <==>  github <==> Vikram's laptop
+
+  git remote add origin git@github
+
+    remote origin
+    git push origin master
+    u
+
+    github/username/repo-name
+
+    forking 

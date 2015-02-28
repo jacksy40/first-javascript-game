@@ -2,20 +2,28 @@ require "sinatra"
 require "csv"
 require 'net/http'
 require 'uri'
+require "pg"
+require "pry"
 
+def db_connection
+  begin
+    connection = PG.connect(dbname: "news_aggregator_development")
+      yield(connection)
+  ensure
+    connection.close
+  end
+end
 
-def ping(host)
-begin
- url=URI.parse(host)
- response=Net::HTTP.get(url)
-   if response==""
-     return false
-   else
-     return true
-   end
-   rescue Errno::ECONNREFUSED
-     return false
- end
+def csv_migration file
+  convert = []
+    CSV.foreach(file) do |row|
+      convert << row
+    end
+    convert.each do |row|
+    db_connection do |conn|
+      conn.exec_params("INSERT INTO posts (article, url, description) VALUES ($1,$2,$3)", [row[0], row[1], row[2]])
+    end
+  end
 end
 
 response = nil
@@ -26,11 +34,7 @@ dese = nil
 slacks = []
 #error conditions
 post "/test" do
-    ping_url = params["url"]
-  #response = ping("http://#{params["url"]}")
-  if params["url"] != ""
-  ping"http://#{ping_url}"
-  end
+
   if params["article"] == "" || params["url"] =="" || params["des"] == ""
     error = "Error, Please don't leave any fields blank."
     articlee = params["article"]
@@ -43,20 +47,17 @@ post "/test" do
     urle = params["url"]
     dese = params["des"]
     redirect "/error"
-  elsif response == true
-    error = "input a good URL"
-    redirect "/error"
   else
     article = params["article"]
     url = params["url"]
     des = params["des"]
-    CSV.open("slack.csv","a+") do |csv|
-      csv << [article, url, des]
-    end
-      redirect "/"
+    csv.
+  end
+    redirect "/"
   end
 end
 #controller
+
 get "/" do
   clear_error = nil
   article = params["article"]
@@ -64,30 +65,11 @@ get "/" do
   des = params["des"]
   erb :index, locals:{error: clear_error, art: article, ur: url, descript: des}
 end
+
 get "/error" do
   erb :index, locals:{error: error, art: articlee, ur: urle, descript: dese }
 end
+
 get "/articles" do
-  CSV.foreach('slack.csv', headers: true, header_converters: :symbol) do |row|
-    slacks << row.to_hash
-  end
-  erb :articles, locals: {slacks: slacks}
-end
-
-require 'net/http'
-require 'uri'
-
-
-def ping(host)
-begin
- url=URI.parse(host)
- response=Net::HTTP.get(url)
-   if response==""
-     return false
-   else
-     return true
-   end
-   rescue Errno::ECONNREFUSED
-     return false
- end
+  stuff = CSV.readline("slacks.csv")  erb :articles, locals: {slacks: stuff}
 end

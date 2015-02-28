@@ -1,0 +1,42 @@
+facilitation 
+
+	Ajax
+	
+	web 2.0 
+		was a dawn of new age web dev
+	google maps
+		ntthp protocol - is a server and a browser interacting
+			xml http object was unknown in the begining in the 90's
+		using javascript interpreter
+		what is happeneing behind the scene when you pull the map
+		look in the interpreter
+		ajax importance
+			JSON - server delivers json to the client that uses javascript
+			server and client working together to produce a faster smoother user experience
+			result less work for network and server
+		get request
+			getting new news 
+			getting new feed
+			etc
+			allows us to scroll and get a continuous feed quickly
+			exampl:
+				serialization mechanism - process translate one data format to another
+				ruby hash to json object 
+				ruby array to  json object with array
+				.to_jason monkey patch(term)-add methods to make it behave a different way
+				ruby hash after .to_json the methods are added and turns it into a json
+				in the body on strings can be displayed
+				client side using jquery it reconstructs by parsing the string into a JSON
+				content type gives client a hint what kind of information is coming
+				old implementation of old ajax code
+				jquery builds all the code that makes all browser and codes work together
+				always use jquery
+				DOM manipulator
+		jQuery API(website)
+			$.get([url,[data][success][dataType]])
+			handle failure with .fail()
+			attaching a oject by assgining a var to an event handler
+				deffers and promises
+				
+			
+			
