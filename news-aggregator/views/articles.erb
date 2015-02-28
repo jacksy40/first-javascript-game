@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Daily Slacker</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+
+  <body>
+    <h1>Slack, Slack, Slack...</h1>
+  <h2>Read them all!</h2>
+  <ul><a href="/">Home</a></ul>
+  <ul>
+  <%slacks.each do |article|%>
+  <ul><h3><%=article[:articles]%></h3></ul>
+    <ul><a href=http://<%=article[:urls]%>><%=article[:urls]%></a></ul>
+    <ul><%=article[:descriptions]%></ul>
+
+    <%end%>
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Daily Slacker</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+
+  <body>
+    <h1>Slack, Slack, Slack...</h1>
+
+  <h2>and feed me articles!</h2>
+
+  <div><%=error%></div>
+
+    <form action="/test" method="post">
+      <label for="task_name">Feed me Article:</label>
+        <li><input type="text" id="article" name="article" value=<%=art%>></li>
+
+      <label for="task_name">What URL:</label>
+        <li><input type="text" id="url" name="url" value=<%=ur%>></li>
+
+      <label for="task_name">Description:</label>
+        <li><input type="text" id="des" name="des" value=<%=descript%>></li>
+        <input type="submit">
+    </form>
+    <li></li>
+    <li><a href="/articles">All Articles</a></li>
+  </body>
+</html>
