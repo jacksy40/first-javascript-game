@@ -1,5 +1,5 @@
 require "sinatra"
-require "pry"
+
 
 use Rack::Session::Cookie, {
   secret: "keep_it_secret_keep_it_safe"
@@ -25,7 +25,6 @@ messages = ["It's a tie. Choose again!", "Player scores.", "Computer scores"]
 comp = ["rock", "paper", "scissors"].sample
 result = game(params[:choice], comp)
 choice = messages[result]
-binding.pry
   if session[:player_win].nil?
     player_win = 0
   else

@@ -1,0 +1,39 @@
+facilitation 
+
+	database Relationships
+
+using songs database as and example
+	flat table db 
+	how to normalize it goal is to have no duplication(change things in one place)
+		reduece redundancy but downside is more complex sql query
+		look for duplication
+		create a two table db
+		
+		songs Data
+		id (pk)
+		artist_id (fk)
+		track 
+		title
+		
+		Artists Data
+		id 
+		name
+		
+		albums Data
+		id
+		name
+		image
+		
+		How do you organize data 
+		
+		many singles has one artists and one 
+		one to many 
+		rarely many to many (join table)
+		
+		artists id 					join table							songs id 
+		
+		more than one artist		artist id 								title 
+									songs id 
+									1 , 5	
+									2 , 5	
+									
