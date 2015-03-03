@@ -1,5 +1,5 @@
 require "sinatra"
-
+require "pry"
 
 use Rack::Session::Cookie, {
   secret: "keep_it_secret_keep_it_safe"
@@ -25,7 +25,7 @@ messages = ["It's a tie. Choose again!", "Player scores.", "Computer scores"]
 comp = ["rock", "paper", "scissors"].sample
 result = game(params[:choice], comp)
 choice = messages[result]
-
+binding.pry
   if session[:player_win].nil?
     player_win = 0
   else
@@ -41,10 +41,8 @@ choice = messages[result]
   else result == 2
    session[:comp_win] = comp_win + 1
   end
-
 player_score = session[:player_win]
 comp_score = session[:comp_win]
-
 if player_score > 2
   WIN = "The Human won!"
   redirect "/winner"
@@ -52,11 +50,8 @@ if player_score > 2
     WIN = "The Computer won!"
     redirect "/winner"
 end
-
-
 erb :game, locals: { choice: choice, computer_score: comp_score, player_score: player_score, computer: comp, player: params[:choice] }
 end
-
 
 def game (player, comp)
   comp_loses = {'scissors'=>'rock', 'rock'=>'paper', 'paper'=>'scissors'}
