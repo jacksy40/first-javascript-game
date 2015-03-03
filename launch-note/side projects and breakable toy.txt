@@ -1,0 +1,10 @@
+start with web app first 
+build relational db
+
+other: build a voting app within the trustee setup up schedule
+word counting 
+
+having a reference point we can measure if an article is bais or not
+
+teach a software how to apply logic by using a reference point. reference point is created with examples within a database.  ***learn to count word and decide what the sentence is saying.
+

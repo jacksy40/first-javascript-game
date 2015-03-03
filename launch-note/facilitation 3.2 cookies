@@ -1,0 +1,77 @@
+Sart of Week 3
+
+Sessions and HTTP cookies
+
+
+clients	clients clients <=HTTP GET(request) POST(response) => server(or many servers)  <= SQL => DB(or cluster of database)    
+		
+communication between clients and server breaks as a request or response finishes
+memory of any get and put is completely wiped out 
+ benefit	
+	closed connection allows more resource to be alocated else where
+	if the server had to remember each client the web server would run out of memory
+ drawback
+ 	cant remember anything
+	cant request one to sign in; the second request should keep the information of time language, etc 
+linking two requests together are called cookies
+
+first request is a get request 
+response is 200ok and also include some info
+
+poost/sigin
+302 found cookie: username = foo
+get accounts 
+cookies username=foo(set by server)
+second client
+without a cookie 
+will send the client back to the login page
+cookies should not be shared
+
+downside for using cookies
+	cookies do expires
+	cookies have a 4k limit key value pair (minimize use)
+	you can delete a cookie and that will set as a new request
+	store only something dispensible
+	avoid sensitive info
+	cookies are restricted to other domain
+	cookies most often is used for authentication
+
+authentication
+	process in authenticating on a website
+		1. register
+		2. email, username and passowrd
+			then sets up a newuser in the user table INSERT DB
+				id email pass name etc
+		3. reroutes to sign in page
+			verification with the DB 
+		4. row returns to server from DB
+		5. now give him a cookie!
+			set cookie with userid = 1 (could modify to say user 3 or 4)
+				so good practice is to encrypt 
+				
+				usrid = 1 =>
+									cryptographic hash => comes up with a crypto hash
+				secret key =>(kept on web server and keep it safe)look at in theatre challenge 
+				
+			password should be encrpted
+		future ref: post sigin in => check crediential if valid userid = primary key to reference record
+			userid=1--plus the ecrpyted string then the key will translate the string the the userid 
+			if string does not 
+			
+			SSL 
+			
+			client => post /purchase+cookies => webserver
+			
+				anouther client(could be listening) 
+			stealing cookies
+			how do you listen for other request on wifi
+			
+			protect this by using SSL HTTPS
+			 other HSTS
+			 
+			 when building an app to horoku
+			 always use HTTPS secure website
+			  basic attacks
+			  
+				
+	
