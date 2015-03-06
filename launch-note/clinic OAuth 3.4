@@ -1,0 +1,37 @@
+OAuth using github 
+
+client     get/sign in =====>        server  ===> DB  ==> table(user)
+		<===username and password 
+		====> post sign/in
+		<==== with cookies userid 
+		
+		
+client signin with github in horizon
+
+client get sign-in  launch server redirects to github after you are authorized by github you get a token back then the token is passed to launch and launch response to git hub and git hub will response with an ok
+
+OAuth 
+
+implementing sign in 
+
+1. add link signin redirect github sign in page
+have a sigin path and redirect"/redirect user to git hub path"
+register an app/ github settings on left to get a client id
+
+send back 
+authorization callback url 
+
+2. 
+
+sigin in with url
+
+
+3. given token get that information to get user info
+ token is responded back
+how to send a post through ruby ? use net/http  or httparty post with mulit value
+how to access the code = 
+buy using params["code"]
+
+if building an app use an oauth
+linkedin in oauth
+

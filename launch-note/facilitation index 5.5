@@ -1,0 +1,54 @@
+facilitation 
+
+	Indicies 
+	*Understand how indicies work
+		How to use
+		how db searches
+		how db stores data
+		when indexes are used
+	
+		Index 
+			addition column added to a table to speed up search 
+				-like a index in a library( helps you go directly to the record or approximately where it 				 				is )				
+				- 
+				
+				student_id_index has two parts
+				
+				id      &
+				value point
+				
+				common to index the foreign key
+				create index cohort_id_student_index on students (cohort_id)
+				(another way)
+				create table students (
+				id int primary,
+				name string
+				);
+				
+				when table is indexed it can query through a balance tree
+				to store a ordered list of data 
+				DB uses a doubley linked list 
+				logically sequential 
+				does not need to be physically squential
+				works like a chain 
+				example
+				store row one  
+				store row two 
+				row one points to row two and two points to three and so on. If doesnt matter if row 15 gets inserted in between 4 and 5 
+				what does a balance search tree looks like?
+				trees never get deeper than 6 levels
+				algorithmic math
+				equation to determine if an indicies would even be used
+				selectivity = cardinality/number of records * 100%
+				what is cardinality
+				what is selectivity ( chance the record is unique serial primary key has a selectivity of 100 vs boolean is very low )
+				
+										123
+										
+				123		        		123						123		
+								
+		123		123		123		123		123		123		123		123		123
+		
+		What to index
+				long unique column for a index to be useful
+		

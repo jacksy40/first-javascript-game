@@ -1,0 +1,6 @@
+<h3> Actors </h3>
+<p><a href="/movies">Movies</a> | <a href="/next_actors">Next Twenty</a>
+  <a>  Page: <%=page%></a>
+<% actors.each do |actor|%>
+<li><a class = 'detail' href="/actors/show?actor=<%=actor['name']%>"><%=actor["name"]%></a><li>
+<%end%>

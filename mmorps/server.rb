@@ -1,55 +1,57 @@
 require "sinatra"
-
+require "pry"
 
 use Rack::Session::Cookie, {
   secret: "keep_it_secret_keep_it_safe"
 }
 
-get "/winner" do
-  erb :winner, locals: {win: WIN}
-end
-
 get "/" do
   redirect "/RPS"
 end
-
 get "/RPS" do
   session[:player_win] = 0
   session[:comp_win] = 0
-  choice = ""
-  erb :index, locals: { choice: choice }
+erb :game
+end
+
+get "/game" do
+  @message = session[:message]
+  @player_score = session[:player_win]
+  @computer_score = session[:comp_win]
+  erb :game
+end
+
+get "/winner" do
+  @message = session[:message]
+  @player_score = session[:player_win]
+  @computer_score = session[:comp_win]
+  erb :winner
 end
 
 post "/choice" do
-messages = ["It's a tie. Choose again!", "Player scores.", "Computer scores"]
-comp = ["rock", "paper", "scissors"].sample
-result = game(params[:choice], comp)
-choice = messages[result]
-  if session[:player_win].nil?
-    player_win = 0
-  else
-    player_win = session[:player_win].to_i
-  end
-  if session[:comp_win].nil?
-    comp_win = 0
-  else
-    comp_win = session[:comp_win].to_i
-  end
+@computer_choose = ["rock", "paper", "scissors"].sample
+@player_choose = params[:choice]
+result = game(@player_choose, @computer_choose)
   if result == 1
-   session[:player_win] = player_win + 1
-  else result == 2
-   session[:comp_win] = comp_win + 1
+    session[:message] = "Player chooses #{@player_choose}, and Computer chooses #{@computer_choose}. Player scores."
+    session[:player_win] += 1
+    elsif result == 2
+      @message = session[:message] = "Player chooses #{@player_choose}, and Computer chooses #{@computer_choose}. Computer scores."
+      session[:comp_win] += 1
+    else
+      session[:message] = "It's a tie! Choose again."
   end
-player_score = session[:player_win]
-comp_score = session[:comp_win]
-if player_score > 2
-  WIN = "The Human won!"
-  redirect "/winner"
-  elsif comp_score > 2
-    WIN = "The Computer won!"
+  if session[:player_win] > 2 || session[:comp_win] > 2
+    if session[:player_win] > 2
+      session[:message] = "Player chose #{@player_choose}, and Computer chose #{@computer_choose}. Human Wins!"
     redirect "/winner"
-end
-erb :game, locals: { choice: choice, computer_score: comp_score, player_score: player_score, computer: comp, player: params[:choice] }
+    else
+      session[:message] = "Player chose #{@player_choose}, and Computer chose #{@computer_choose}. Computer Wins!"
+      redirect "/winner"
+    end
+  else
+    redirect "/game"
+  end
 end
 
 def game (player, comp)

@@ -1,8 +1,11 @@
 
 <ul>Player Score</ul>
-<p>Player chooses <%=player%>, Computer chooses <%=computer%>. <%=choice%></p>
-<p>Human: <%=player_score%></p>
-<p>Computer: <%=computer_score%></p>
+<%if !@message.nil?%>
+<p><%=@message%></p>
+<p>Human: <%=@player_score%></p>
+<p>Computer: <%=@computer_score%></p>
+<%else%>
+<%end%>
 
 
 

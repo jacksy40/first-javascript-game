@@ -4,6 +4,9 @@ require "pg"
 require "csv"
 require 'pry'
 
+################
+#helper methods#
+################
 
 def empid element
   ekey = db_connection{ |connect| connect.exec("SELECT employee_id FROM employees where employee_name='#{element}'") }.to_a
@@ -41,6 +44,9 @@ def verify(element, column, table)
      end
 end
 
+##########
+# upload #
+##########
 
 def employee_upload file
 convert = []
@@ -57,9 +63,6 @@ convert = []
     end
   end
 end
-
-
-
 
 def customers_upload file
 convert = []
@@ -95,6 +98,7 @@ convert = []
       convert << row
     end
     convert.each do |row|
+
       split_name = row[0].split(" ")
       employee = split_name[0] + " " + split_name[1]
       found_employee_key = empid employee
@@ -107,9 +111,6 @@ convert = []
       found_product_key = prodid product
 
       money = row[4].gsub(/[$]/, "")
-
-
         db_connection{|connect| connect.exec_params("INSERT INTO invoice (employee_id, customer_id, product_id, invoice_number, sale_date, sale_amount, units_sold, frequency) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)", [ found_employee_key, found_customer_key, found_product_key, "#{row[6]}","#{row[3]}", money, "#{row[5]}", "#{row[7]}"]) }
       end
   end
-invoice_upload "sales.csv"

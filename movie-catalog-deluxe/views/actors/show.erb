@@ -1,0 +1,13 @@
+<h2> Actor - Details </h2>
+
+<h4>Actor: <%=actor%></h4>
+<% details.each do |detail|%>
+<div class='detail'>
+  <li>Starred in: <a href="/movies/show?movie=<%=detail['title']%>"><%=detail["title"]%></a><li>
+    <li>Played: <%=detail["character"]%><li>
+<%end%>
+</div>
+
+
+
+<p><a href="/actors">Actors</a> | <a href="/movies">Movies</a></p>

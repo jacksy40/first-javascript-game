@@ -1,0 +1,50 @@
+facilitation SQL join
+
+	Inner joins or just (join) default 
+		select * from a join b on a.name = b.name
+		ven diagram A and b cirlces the join is what A and B both holds 
+		that creates a new table or think of it as a (report)
+	
+	Full outer joins
+		select * from A full outer join b on a.name = b.name
+		ven dagram  and b will show everything 
+		full outer join will take *everything including null* from both tables we are joining and make it in one. 
+	
+	Left/Right Outer Join
+	  Left	
+		select * from A left outer join B on a.name=b.name
+		ven diagram all of everything in A and include what elements
+		 B shares with A 
+	  Right		
+		select * from A right outer join B on a.name=b.name
+		ven diagram all of everything in B and include what elements
+		 B shares with A
+	
+	Left/Right Outer join (where/nil)
+	  Left
+		select * from A left outer join B on a.name=b.name
+		ven diagram all of everything in A and exclude what elements
+	 	B shares with A
+	 Right
+ 		select * from A right outer join B on a.name=b.name
+ 		ven diagram all of everything in B and exclude what elements
+ 	 	B shares with A
+	
+	full Outer Join (where nil)
+	
+	excludes from showing any relation A and B holds. 
+	
+	cross join 
+	select * from A cross join B
+	?? creates a matrix-y
+	
+	how to re-qeury the join table 
+	use where statement set contions of what shows up on your new table 
+	(think about report writer and the reports produced at bnymellon. We used an interface to query the database. Selecting what you want to show up on your report or select predefined report )
+	
+	Why more than one table
+	
+	when do you use SQL and when do you want to use active record query generation language?
+	
+	
+	

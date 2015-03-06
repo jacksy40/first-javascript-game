@@ -1,12 +1,12 @@
 
-<ul>Player Score</ul>
+<ul>*Game * Over*</ul>
 
-<p>Human: </p>
-<p>Computer: </p>
+<p>Human: <%=@player_score%> </p>
+<p>Computer: <%=@computer_score%>  </p>
 
 
-<h3><%=win%> </h3>
+<h3><%=@message%> </h3>
 
 <form id="condition" action="/" method="get">
-  <input type="submit" name="choice" value="restart">
+  <input type="submit" name="restart" value="restart">
 </form>
